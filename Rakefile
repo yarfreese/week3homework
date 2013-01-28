@@ -41,7 +41,16 @@ end
 # TODO #1
 # make tests run by default
 # running 'rake' should run your tests
+task :default => [:test]
+
 
 # TODO #2
 # 1. add a method that you write to this rakefile
 # 2. write a rake task that uses the method and prints something using puts
+def only_specs dir_list
+  dir_list.select { |file| file if File.extname(file) == ".rb" }
+end
+desc "list spec files"
+task :list_specs do
+   puts only_specs Dir['spec/*']
+end
