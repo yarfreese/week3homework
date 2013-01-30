@@ -1,6 +1,8 @@
 $LOAD_PATH.unshift File.expand_path("../lib", __FILE__)
 require 'week3'
 
+A_CONSTANT = "I'm a CONSTANT"
+
 describe 'Variable type' do
 
   # TODO: Figure out where to set these (but NOT inside each test)
@@ -97,7 +99,10 @@ describe 'Week3 method' do
     #
     # challenge: write the tests first
     #
-    it 'returns defaults when no parameter is provided'
+    it '#returns defaults when no parameter is provided' 
+    # it '#returns defaults when no parameter is provided' do
+    #   subject.configure.should eq "{:path=>\"./\", :version=>\"0.1.0\", :mode=>\"production\"}"
+    # end
 
     it 'returns default value when :path is missing from parameter'
 

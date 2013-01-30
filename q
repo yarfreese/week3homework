@@ -9,29 +9,18 @@ class Week3
     @name = 'Brandon'
   end
 
-  def name  
-    "#{@name}"
+  def new(name)  
+    @name = name
   end 
 
-  def name= new_name
-    return @name = new_name
-    # these all work after @name = new_name
-    # name 
-    # "#{@name}"
-    # return @name
-  end 
-    
   def run_me 
-    "I'm running your code!" #{yield if block_given?}"
-    # the following 4 lines work 
-    # result = "I'm running your code!"
+    result = "I'm running your code!"
+    # the following works too
     # if block_given?
     #   result << yield 
     # end
-    # the following 3 lines work
-    #  result = "I'm running your code!"
-    #  result << yield if block_given?
-    #  result
+    result << yield if block_given?
+    result
   end
 
   def each_odd arry
@@ -75,12 +64,4 @@ class Week3
       false 
     end
   end
-
-#  def configure(args={})
-#    return defaults = {
-#      :path    => "./", 
-#      :version => "0.1.0", 
-#      :mode    => "production"}.merge(args) if args
-#  end
-
 end
